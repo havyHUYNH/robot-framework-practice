@@ -1,0 +1,1 @@
+Page objects (PO) define keywords that are used by higher-level test cases.
