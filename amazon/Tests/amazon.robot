@@ -26,6 +26,21 @@ User can search for products
     Wait Until Element Is Visible  ${SEARCH_RESULTS_CONTAINER}  timeout=15s
     Page Should Contain Element  xpath=//span[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'ferrari 458')]
 
+User can view a product
+    [Documentation]  This is some basic info about the test
+    [Tags]  Smoke
+    Open Browser  http://www.amazon.com  edge
+    Wait Until Page Contains  Search Amazon
+    Dismiss Delivery Popup If Present
+    Input Text  ${SEARCH_INPUT}  Ferrari 458
+    Press Keys  ${SEARCH_INPUT}  ENTER
+    Wait Until Element Is Visible  ${SEARCH_RESULTS_CONTAINER}  timeout=15s
+    Dismiss Delivery Popup If Present
+    Wait Until Element Is Visible  xpath=(//div[@data-component-type='s-search-result']//img[contains(@class,'s-image')])[1]  timeout=15s
+    Click Element  xpath=(//div[@data-component-type='s-search-result']//img[contains(@class,'s-image')])[1]
+    Wait Until Element Is Visible  id=productTitle  timeout=15s
+    Close Browser
+
 *** Keywords ***
 Dismiss Delivery Popup If Present
     ${is_visible}=  Run Keyword And Return Status
