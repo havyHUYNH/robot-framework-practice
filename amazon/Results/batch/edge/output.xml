@@ -1,225 +1,410 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.13.1 on win32)" generated="2026-02-18T14:05:57.320985" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.13.1 on win32)" generated="2026-02-18T14:42:38.080987" rpa="false" schemaversion="5">
 <suite id="s1" name="Amazon" source="C:\369_workspaces\02_Test_Framework\robot-framework\robot-framework-practice\amazon\tests\amazon.robot">
 <test id="s1-t1" name="User can search for products" line="18">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-02-18T14:05:57.536026" level="INFO">Opening browser 'edge' to base url 'https://www.amazon.com'.</msg>
+<msg time="2026-02-18T14:42:38.292973" level="INFO">Opening browser 'edge' to base url 'https://www.amazon.com'.</msg>
 <arg>${AMAZON_URL}</arg>
 <arg>edge</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-02-18T14:05:57.535773" elapsed="1.453650"/>
+<status status="PASS" start="2026-02-18T14:42:38.292763" elapsed="1.225008"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Search Amazon</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-18T14:05:58.989983" elapsed="3.079161"/>
+<status status="PASS" start="2026-02-18T14:42:39.518196" elapsed="3.783501"/>
 </kw>
 <kw name="Dismiss Delivery Popup If Present">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2026-02-18T14:06:04.358523" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-02-18T14:06:04.358749" level="FAIL">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</msg>
+<msg time="2026-02-18T14:42:45.601347" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-18T14:42:45.601496" level="FAIL">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</msg>
 <arg>${DELIVERY_DISMISS_BUTTON}</arg>
 <arg>timeout=2s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2026-02-18T14:06:02.070825" elapsed="2.290187">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</status>
+<status status="FAIL" start="2026-02-18T14:42:43.304247" elapsed="2.298794">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</status>
 </kw>
-<msg time="2026-02-18T14:06:04.361224" level="INFO">${is_visible} = False</msg>
+<msg time="2026-02-18T14:42:45.603188" level="INFO">${is_visible} = False</msg>
 <var>${is_visible}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${DELIVERY_DISMISS_BUTTON}</arg>
 <arg>timeout=2s</arg>
 <doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2026-02-18T14:06:02.070410" elapsed="2.290842"/>
+<status status="PASS" start="2026-02-18T14:42:43.303174" elapsed="2.300036"/>
 </kw>
 <if>
 <branch type="IF" condition="${is_visible}">
 <kw name="Click Button" owner="SeleniumLibrary">
 <arg>${DELIVERY_DISMISS_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-02-18T14:06:04.361538" elapsed="0.000028"/>
+<status status="NOT RUN" start="2026-02-18T14:42:45.603450" elapsed="0.000023"/>
 </kw>
-<status status="NOT RUN" start="2026-02-18T14:06:04.361360" elapsed="0.000248"/>
+<status status="NOT RUN" start="2026-02-18T14:42:45.603309" elapsed="0.000193"/>
 </branch>
-<status status="PASS" start="2026-02-18T14:06:04.361331" elapsed="0.000320"/>
+<status status="PASS" start="2026-02-18T14:42:45.603281" elapsed="0.000252"/>
 </if>
-<status status="PASS" start="2026-02-18T14:06:02.070022" elapsed="2.291686"/>
+<status status="PASS" start="2026-02-18T14:42:43.302437" elapsed="2.301146"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T14:06:04.362982" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'.</msg>
+<msg time="2026-02-18T14:42:45.604085" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'.</msg>
 <arg>${SEARCH_INPUT}</arg>
 <arg>Ferrari 458</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T14:06:04.362605" elapsed="0.173343"/>
+<status status="PASS" start="2026-02-18T14:42:45.603893" elapsed="0.107123"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2026-02-18T14:06:04.537165" level="INFO">Sending key(s) ('ENTER',) to id=twotabsearchtextbox element.</msg>
-<msg time="2026-02-18T14:06:04.843290" level="INFO">Pressing special key ENTER to element.</msg>
-<msg time="2026-02-18T14:06:04.843360" level="INFO">Releasing special key ENTER.</msg>
+<msg time="2026-02-18T14:42:45.711727" level="INFO">Sending key(s) ('ENTER',) to id=twotabsearchtextbox element.</msg>
+<msg time="2026-02-18T14:42:46.012468" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-02-18T14:42:46.012539" level="INFO">Releasing special key ENTER.</msg>
 <arg>${SEARCH_INPUT}</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2026-02-18T14:06:04.536598" elapsed="3.688199"/>
+<status status="PASS" start="2026-02-18T14:42:45.711385" elapsed="2.465854"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${SEARCH_RESULTS_CONTAINER}</arg>
 <arg>timeout=15s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T14:06:08.225448" elapsed="0.028683"/>
+<status status="PASS" start="2026-02-18T14:42:48.177847" elapsed="0.032013"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T14:06:08.272832" level="INFO">Current page contains element 'xpath=//span[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'ferrari 458')]'.</msg>
+<msg time="2026-02-18T14:42:48.228540" level="INFO">Current page contains element 'xpath=//span[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'ferrari 458')]'.</msg>
 <arg>xpath=//span[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'ferrari 458')]</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-02-18T14:06:08.254500" elapsed="0.018467"/>
+<status status="PASS" start="2026-02-18T14:42:48.210266" elapsed="0.018459"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-02-18T14:06:08.273504" elapsed="2.276049"/>
+<status status="PASS" start="2026-02-18T14:42:48.229223" elapsed="2.238118"/>
 </kw>
 <doc>This is some basic info about the test</doc>
 <tag>Smoke</tag>
-<status status="PASS" start="2026-02-18T14:05:57.534819" elapsed="13.015412"/>
+<status status="PASS" start="2026-02-18T14:42:38.291988" elapsed="12.176310"/>
 </test>
 <test id="s1-t2" name="User can view a product" line="29">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-02-18T14:06:10.555207" level="INFO">Opening browser 'edge' to base url 'http://www.amazon.com'.</msg>
+<msg time="2026-02-18T14:42:50.472340" level="INFO">Opening browser 'edge' to base url 'http://www.amazon.com'.</msg>
 <arg>http://www.amazon.com</arg>
 <arg>edge</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-02-18T14:06:10.552969" elapsed="1.496387"/>
+<status status="PASS" start="2026-02-18T14:42:50.471961" elapsed="2.868066"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Search Amazon</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-18T14:06:12.049938" elapsed="2.105526"/>
+<status status="PASS" start="2026-02-18T14:42:53.340444" elapsed="3.366212"/>
 </kw>
 <kw name="Dismiss Delivery Popup If Present">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2026-02-18T14:06:16.601411" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-02-18T14:06:16.601543" level="FAIL">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</msg>
+<msg time="2026-02-18T14:42:59.086019" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-18T14:42:59.086160" level="FAIL">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</msg>
 <arg>${DELIVERY_DISMISS_BUTTON}</arg>
 <arg>timeout=2s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2026-02-18T14:06:14.156796" elapsed="2.445478">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</status>
+<status status="FAIL" start="2026-02-18T14:42:56.708197" elapsed="2.378738">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</status>
 </kw>
-<msg time="2026-02-18T14:06:16.602410" level="INFO">${is_visible} = False</msg>
+<msg time="2026-02-18T14:42:59.087075" level="INFO">${is_visible} = False</msg>
 <var>${is_visible}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${DELIVERY_DISMISS_BUTTON}</arg>
 <arg>timeout=2s</arg>
 <doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2026-02-18T14:06:14.156398" elapsed="2.446032"/>
+<status status="PASS" start="2026-02-18T14:42:56.707865" elapsed="2.379230"/>
 </kw>
 <if>
 <branch type="IF" condition="${is_visible}">
 <kw name="Click Button" owner="SeleniumLibrary">
 <arg>${DELIVERY_DISMISS_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-02-18T14:06:16.602847" elapsed="0.000063"/>
+<status status="NOT RUN" start="2026-02-18T14:42:59.087323" elapsed="0.000022"/>
 </kw>
-<status status="NOT RUN" start="2026-02-18T14:06:16.602517" elapsed="0.000466"/>
+<status status="NOT RUN" start="2026-02-18T14:42:59.087185" elapsed="0.000189"/>
 </branch>
-<status status="PASS" start="2026-02-18T14:06:16.602492" elapsed="0.000547"/>
+<status status="PASS" start="2026-02-18T14:42:59.087159" elapsed="0.000246"/>
 </if>
-<status status="PASS" start="2026-02-18T14:06:14.156003" elapsed="2.447118"/>
+<status status="PASS" start="2026-02-18T14:42:56.707298" elapsed="2.380153"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T14:06:16.604002" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'.</msg>
+<msg time="2026-02-18T14:42:59.088010" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'.</msg>
 <arg>${SEARCH_INPUT}</arg>
 <arg>Ferrari 458</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T14:06:16.603726" elapsed="0.133112"/>
+<status status="PASS" start="2026-02-18T14:42:59.087785" elapsed="0.134814"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2026-02-18T14:06:16.737814" level="INFO">Sending key(s) ('ENTER',) to id=twotabsearchtextbox element.</msg>
-<msg time="2026-02-18T14:06:17.057140" level="INFO">Pressing special key ENTER to element.</msg>
-<msg time="2026-02-18T14:06:17.057242" level="INFO">Releasing special key ENTER.</msg>
+<msg time="2026-02-18T14:42:59.223509" level="INFO">Sending key(s) ('ENTER',) to id=twotabsearchtextbox element.</msg>
+<msg time="2026-02-18T14:42:59.544064" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-02-18T14:42:59.544237" level="INFO">Releasing special key ENTER.</msg>
 <arg>${SEARCH_INPUT}</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2026-02-18T14:06:16.737227" elapsed="2.846328"/>
+<status status="PASS" start="2026-02-18T14:42:59.222951" elapsed="0.341443"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${SEARCH_RESULTS_CONTAINER}</arg>
 <arg>timeout=15s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T14:06:19.584233" elapsed="0.045122"/>
+<status status="PASS" start="2026-02-18T14:42:59.564795" elapsed="2.578315"/>
 </kw>
 <kw name="Dismiss Delivery Popup If Present">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2026-02-18T14:06:21.897906" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-02-18T14:06:21.898033" level="FAIL">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</msg>
+<msg time="2026-02-18T14:43:04.452973" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-18T14:43:04.453094" level="FAIL">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</msg>
 <arg>${DELIVERY_DISMISS_BUTTON}</arg>
 <arg>timeout=2s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2026-02-18T14:06:19.631825" elapsed="2.266929">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</status>
+<status status="FAIL" start="2026-02-18T14:43:02.144026" elapsed="2.309717">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</status>
 </kw>
-<msg time="2026-02-18T14:06:21.898883" level="INFO">${is_visible} = False</msg>
+<msg time="2026-02-18T14:43:04.453860" level="INFO">${is_visible} = False</msg>
 <var>${is_visible}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${DELIVERY_DISMISS_BUTTON}</arg>
 <arg>timeout=2s</arg>
 <doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2026-02-18T14:06:19.631080" elapsed="2.267823"/>
+<status status="PASS" start="2026-02-18T14:43:02.143792" elapsed="2.310086"/>
 </kw>
 <if>
 <branch type="IF" condition="${is_visible}">
 <kw name="Click Button" owner="SeleniumLibrary">
 <arg>${DELIVERY_DISMISS_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-02-18T14:06:21.899109" elapsed="0.000038"/>
+<status status="NOT RUN" start="2026-02-18T14:43:04.454073" elapsed="0.000021"/>
 </kw>
-<status status="NOT RUN" start="2026-02-18T14:06:21.898987" elapsed="0.000198"/>
+<status status="NOT RUN" start="2026-02-18T14:43:04.453956" elapsed="0.000165"/>
 </branch>
-<status status="PASS" start="2026-02-18T14:06:21.898964" elapsed="0.000255"/>
+<status status="PASS" start="2026-02-18T14:43:04.453935" elapsed="0.000212"/>
 </if>
-<status status="PASS" start="2026-02-18T14:06:19.630409" elapsed="2.268859"/>
+<status status="PASS" start="2026-02-18T14:43:02.143547" elapsed="2.310636"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>xpath=(//div[@data-component-type='s-search-result']//img[contains(@class,'s-image')])[1]</arg>
 <arg>timeout=15s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T14:06:21.899594" elapsed="0.033755"/>
+<status status="PASS" start="2026-02-18T14:43:04.454436" elapsed="0.016775"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T14:06:21.933974" level="INFO">Clicking element 'xpath=(//div[@data-component-type='s-search-result']//img[contains(@class,'s-image')])[1]'.</msg>
+<msg time="2026-02-18T14:43:04.471877" level="INFO">Clicking element 'xpath=(//div[@data-component-type='s-search-result']//img[contains(@class,'s-image')])[1]'.</msg>
 <arg>xpath=(//div[@data-component-type='s-search-result']//img[contains(@class,'s-image')])[1]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T14:06:21.933786" elapsed="3.537309"/>
+<status status="PASS" start="2026-02-18T14:43:04.471614" elapsed="2.275265"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id=productTitle</arg>
 <arg>timeout=15s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T14:06:25.471546" elapsed="0.197003"/>
+<status status="PASS" start="2026-02-18T14:43:06.748019" elapsed="0.048314"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-02-18T14:06:25.669189" elapsed="2.261281"/>
+<status status="PASS" start="2026-02-18T14:43:06.796857" elapsed="2.224159"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-02-18T14:06:27.931721" elapsed="0.000409"/>
+<status status="PASS" start="2026-02-18T14:43:09.022832" elapsed="0.000316"/>
 </kw>
 <doc>This is some basic info about the test</doc>
 <tag>Smoke</tag>
-<status status="PASS" start="2026-02-18T14:06:10.551782" elapsed="17.380843"/>
+<status status="PASS" start="2026-02-18T14:42:50.470726" elapsed="18.552686"/>
+</test>
+<test id="s1-t3" name="User must sign in to check out" line="44">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-18T14:43:09.026077" level="INFO">Opening browser 'edge' to base url 'http://www.amazon.com'.</msg>
+<arg>http://www.amazon.com</arg>
+<arg>edge</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-18T14:43:09.025721" elapsed="2.588795"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Search Amazon</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-18T14:43:11.614908" elapsed="3.946355"/>
+</kw>
+<kw name="Dismiss Delivery Popup If Present">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-02-18T14:43:17.817391" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-18T14:43:17.817517" level="FAIL">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</msg>
+<arg>${DELIVERY_DISMISS_BUTTON}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-02-18T14:43:15.563451" elapsed="2.254819">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</status>
+</kw>
+<msg time="2026-02-18T14:43:17.818416" level="INFO">${is_visible} = False</msg>
+<var>${is_visible}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${DELIVERY_DISMISS_BUTTON}</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-02-18T14:43:15.562552" elapsed="2.255885"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_visible}">
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${DELIVERY_DISMISS_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-18T14:43:17.818706" elapsed="0.000042"/>
+</kw>
+<status status="NOT RUN" start="2026-02-18T14:43:17.818522" elapsed="0.000265"/>
+</branch>
+<status status="PASS" start="2026-02-18T14:43:17.818500" elapsed="0.000320"/>
+</if>
+<status status="PASS" start="2026-02-18T14:43:15.561993" elapsed="2.256947"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-18T14:43:17.819764" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'.</msg>
+<arg>${SEARCH_INPUT}</arg>
+<arg>Ferrari 458</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-18T14:43:17.819519" elapsed="0.104205"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-02-18T14:43:17.924442" level="INFO">Sending key(s) ('ENTER',) to id=twotabsearchtextbox element.</msg>
+<msg time="2026-02-18T14:43:18.231090" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-02-18T14:43:18.231240" level="INFO">Releasing special key ENTER.</msg>
+<arg>${SEARCH_INPUT}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-02-18T14:43:17.924086" elapsed="2.568087"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_RESULTS_CONTAINER}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-18T14:43:20.492623" elapsed="0.024067"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-18T14:43:20.568770" level="INFO">Current page contains element 'xpath=//span[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'ferrari 458')]'.</msg>
+<arg>xpath=//span[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'ferrari 458')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-18T14:43:20.517083" elapsed="0.051771"/>
+</kw>
+<kw name="Dismiss Delivery Popup If Present">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-02-18T14:43:22.879503" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-18T14:43:22.879697" level="FAIL">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</msg>
+<arg>${DELIVERY_DISMISS_BUTTON}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-02-18T14:43:20.570381" elapsed="2.310010">Element 'xpath=//button[normalize-space(.)="Dismiss"]' not visible after 2 seconds.</status>
+</kw>
+<msg time="2026-02-18T14:43:22.880517" level="INFO">${is_visible} = False</msg>
+<var>${is_visible}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${DELIVERY_DISMISS_BUTTON}</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-02-18T14:43:20.570130" elapsed="2.310407"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_visible}">
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${DELIVERY_DISMISS_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-18T14:43:22.880741" elapsed="0.000019"/>
+</kw>
+<status status="NOT RUN" start="2026-02-18T14:43:22.880617" elapsed="0.000170"/>
+</branch>
+<status status="PASS" start="2026-02-18T14:43:22.880596" elapsed="0.000215"/>
+</if>
+<status status="PASS" start="2026-02-18T14:43:20.569890" elapsed="2.310958"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//div[@data-component-type='s-search-result']//img[contains(@class,'s-image')])[1]</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-18T14:43:22.881045" elapsed="0.032699"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-18T14:43:22.914261" level="INFO">Clicking element 'xpath=(//div[@data-component-type='s-search-result']//img[contains(@class,'s-image')])[1]'.</msg>
+<arg>xpath=(//div[@data-component-type='s-search-result']//img[contains(@class,'s-image')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-18T14:43:22.914084" elapsed="2.363220"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=productTitle</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-18T14:43:25.277693" elapsed="0.024005"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-18T14:43:25.302399" level="INFO">Clicking button 'id=add-to-cart-button'.</msg>
+<arg>id=add-to-cart-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-18T14:43:25.302063" elapsed="1.660178"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-02-18T14:43:35.085403" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-18T14:43:35.085560" level="FAIL">Element 'id=hlb-ptc-btn-native' not visible after 8 seconds.</msg>
+<arg>id=hlb-ptc-btn-native</arg>
+<arg>timeout=8s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-02-18T14:43:26.963190" elapsed="8.123037">Element 'id=hlb-ptc-btn-native' not visible after 8 seconds.</status>
+</kw>
+<msg time="2026-02-18T14:43:35.086350" level="INFO">${cart_sheet_checkout} = False</msg>
+<var>${cart_sheet_checkout}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>id=hlb-ptc-btn-native</arg>
+<arg>timeout=8s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-02-18T14:43:26.962714" elapsed="8.123655"/>
+</kw>
+<if>
+<branch type="IF" condition="${cart_sheet_checkout}">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>id=hlb-ptc-btn-native</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-18T14:43:35.086847" elapsed="0.000019"/>
+</kw>
+<status status="NOT RUN" start="2026-02-18T14:43:35.086708" elapsed="0.000183"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=proceedToRetailCheckout</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-18T14:43:35.086969" elapsed="0.011147"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-18T14:43:35.098394" level="INFO">Clicking element 'name=proceedToRetailCheckout'.</msg>
+<arg>name=proceedToRetailCheckout</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-18T14:43:35.098248" elapsed="1.479428"/>
+</kw>
+<status status="PASS" start="2026-02-18T14:43:35.086916" elapsed="1.490833"/>
+</branch>
+<status status="PASS" start="2026-02-18T14:43:35.086682" elapsed="1.491100"/>
+</if>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Sign in or create account</arg>
+<arg>20s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-18T14:43:36.578083" elapsed="0.011348"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-18T14:43:36.589872" elapsed="2.244157"/>
+</kw>
+<doc>This is some basic info about the test</doc>
+<tag>sign-in</tag>
+<status status="PASS" start="2026-02-18T14:43:09.024905" elapsed="29.809644"/>
 </test>
 <doc>This is some basic info about the whole suite</doc>
-<status status="PASS" start="2026-02-18T14:05:57.322156" elapsed="30.612988"/>
+<status status="PASS" start="2026-02-18T14:42:38.082193" elapsed="60.753682"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">sign-in</stat>
 <stat pass="2" fail="0" skip="0">Smoke</stat>
 </tag>
 <suite>
-<stat name="Amazon" id="s1" pass="2" fail="0" skip="0">Amazon</stat>
+<stat name="Amazon" id="s1" pass="3" fail="0" skip="0">Amazon</stat>
 </suite>
 </statistics>
 <errors>
